@@ -34,13 +34,13 @@ function App() {
   function getImageUrl(file) {
     // Create the file metadata
     /** @type {any} */
-    const metadata = {
-      contentType: "image/jpeg",
-    };
+    // const metadata = {
+    //   contentType: "image/jpeg",
+    // };
 
     // Upload file and metadata to the object 'images/mountains.jpg'
     const storageRef = ref(storage, "icon/" + Date.now());
-    const uploadTask = uploadBytesResumable(storageRef, file, metadata);
+    const uploadTask = uploadBytesResumable(storageRef, file); // metadata
 
     // Listen for state changes, errors, and completion of the upload.
     uploadTask.on(
